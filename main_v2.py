@@ -49,7 +49,7 @@ else:
     import law_security
     law_security.check_daily_reset()
     # 🖥️ मुख्य काउंटर हेडर पट्टी
-    st.markdown(f"<div style='background-color: #111827; padding: 10px; border-radius: 10px; border-left: 5px solid #F59E0B; text-align: center;'><h3 style='color: #F59E0B; margin:0; font-size: 14px;'>👤 प्रार्थी: {st.session_state.user_name} जी | 📊 आज के सर्च: {st.session_state.search_count}/50</h3></div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='background-color: #111827; padding: 10px; border-radius: 10px; border-left: 5px solid #F59E0B; text-align: center;'><h3 style='color: #F59E0B; margin:0; font-size: 14px;'>👤 प्रार्थी: {st.session_state.user_name} जी | 📊 आज के सर्च: {st.session_state.search_count}/7</h3></div>", unsafe_allow_html=True)
 
     with st.expander("⚙️ सेटिंग्स (भाषा/नाम बदलें)"):
         settings_bunker.show_settings()
