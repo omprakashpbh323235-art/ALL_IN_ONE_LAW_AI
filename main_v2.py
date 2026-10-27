@@ -60,7 +60,7 @@ else:
     with col2:
         if st.button("🚨 पुलिस विभाग", use_container_width=True): st.session_state.current_portal = "पुलिस"; st.rerun()
     with col3:
-        if st.button("⚖️  वकील साहब", use_container_width=True): st.session_state.current_portal = "अधिवक्ता"; st.rerun()
+        if st.button("⚖️  वकील साहब", use_container_width=True): st.session_state.current_portal = "वकील"; st.rerun()
     with col4:
         if st.button("🏆 30 DPP क्विज़", use_container_width=True): st.session_state.current_portal = "क्विज़"; st.rerun()
 
@@ -71,8 +71,8 @@ else:
     else:
         st.markdown(f"<div class='bns-card'><h3 style='color: #3B82F6; font-size: 18px; margin-top:0;'>💼 एक्टिव पोर्टल: {st.session_state.current_portal} मोड</h3></div>", unsafe_allow_html=True)
         
-        if st.session_state.search_count >= 50:
-            st.error("🔐 प्रार्थी जी, आपके आज के 50 मुफ़्त सर्च पूरे हो चुके हैं! असीमित सर्च पास अनलॉक करें भाई साहब।")
+        if st.session_state.search_count >= 7:
+            st.error("🔐 प्रार्थी जी, आपके आज के 7 मुफ़्त सर्च पूरे हो चुके हैं! असीमित सर्च पास अनलॉक करें भाई साहब।")
         else:
             st.markdown("<h3 style='color: #10B981; font-size: 20px; margin-top:0;'>📝 स्वदेशी लाइव इनपुट डेस्क (100% मुफ़्त)</h3>", unsafe_allow_html=True)
             user_query = st.text_area("अपनी कानूनी समस्या यहाँ लिखें:", placeholder="उदाहरण: चोरी की सजा क्या है...")
