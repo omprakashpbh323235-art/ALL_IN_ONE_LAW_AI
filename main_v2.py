@@ -71,8 +71,8 @@ else:
     else:
         st.markdown(f"<div class='bns-card'><h3 style='color: #3B82F6; font-size: 18px; margin-top:0;'>💼 एक्टिव पोर्टल: {st.session_state.current_portal} मोड</h3></div>", unsafe_allow_html=True)
         
-        if st.session_state.search_count >= 7:
-            st.error("🔐 प्रार्थी जी, आपके आज के 7 मुफ़्त सर्च पूरे हो चुके हैं! असीमित सर्च पास अनलॉक करें भाई साहब।")
+        if st.session_state.search_count >= 3:
+            st.error("🔐 प्रार्थी जी, आपके आज के 3 मुफ़्त सर्च पूरे हो चुके हैं! असीमित सर्च पास अनलॉक करें भाई साहब।")
         else:
             st.markdown("<h3 style='color: #10B981; font-size: 20px; margin-top:0;'>📝 स्वदेशी लाइव इनपुट डेस्क (100% मुफ़्त)</h3>", unsafe_allow_html=True)
             user_query = st.text_area("अपनी कानूनी समस्या यहाँ लिखें:", placeholder="उदाहरण: चोरी की सजा क्या है...")
