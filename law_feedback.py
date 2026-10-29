@@ -25,6 +25,6 @@ def show_report_section():
     )
     
     # आपका असली ईमेल सेट कर दिया गया है भाई साहब
-    email_url = "mailto:ashutoshpbh323235@://gmail.com"
+    email_url = "ashutoshpbh323235@gmail.com"
     
     st.link_button("⚠️ गलत जानकारी की रिपोर्ट करें (Report Error)", email_url, use_container_width=True)
