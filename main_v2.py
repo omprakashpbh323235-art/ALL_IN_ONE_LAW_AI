@@ -90,7 +90,7 @@ else:
                         st.error("🚨 एआई चाबी गायब है भाई साहब!")
                     else:
                         genai.configure(api_key=SELECTED_API_KEY)
-                        model = genai.GenerativeModel(model_name='gemini-1.5-flash', system_instruction=ai_config.SYSTEM_INSTRUCTION)
+                        model = genai.GenerativeModel(model_name='gemini-1.5-flash-latest', system_instruction=ai_config.SYSTEM_INSTRUCTION)
 
                         lang_instruction = f"महत्वपूर्ण: आपको अपना पूरा जवाब केवल '{st.session_state.app_lang}' भाषा में ही बिंदुवार देना है। विशेष निर्देश: जवाब की शुरुआत हमेशा अनिवार्य रूप से प्रार्थी का नाम लेकर आदरपूर्वक करें, जैसे: 'सुनिए {st.session_state.user_name} जी, मेरे बड़े भाई आपके प्रश्न के अनुसार...' इसके बाद ही मुख्य धाराएं समझाएं!"
                         if st.session_state.current_portal == "नागरिक":
