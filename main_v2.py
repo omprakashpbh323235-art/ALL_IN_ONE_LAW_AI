@@ -139,7 +139,7 @@ with st.expander("📢 आवश्यक जानकारी (देखने
     """)
 
 # 2. खुलने-बंद होने वाला सुधार केंद्र (Report Section)
-with st.expander("🛠️ ऑल इन वॅन लॉ एआई सुधार केंद्र (Report An Error /Email id- ashutoshpbh323235@gmail.com)"):
+with st.expander("🛠️ ऑल इन वॅन लॉ एआई सुधार केंद्र (Report An Error)"):
     import law_feedback
     law_feedback.show_report_section()
 
