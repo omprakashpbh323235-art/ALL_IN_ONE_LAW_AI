@@ -13,7 +13,7 @@ import quiz_bunker
 import ai_config
 
 # =====================================================================
-# 👑 KING STUDIO - ALL IN ONE LAW AI VERSION 110.0 (🎯 ALL PORTS & AUDIO FIXED)
+# 👑 ALL IN ONE LAW AI - OFFICIAL WORKSPACE VERSION 110.0
 # =====================================================================
 # 🧠 ENGINE: GEMINI 3.5 FLASH & ORIGINAL INSTANT VOICE ENGINE
 # 🔐 SHIELD: 4 BUTTONS GRID, NO DISCLAIMER CONFLICT, AUDIO 100% OK
