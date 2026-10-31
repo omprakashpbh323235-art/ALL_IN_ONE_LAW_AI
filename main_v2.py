@@ -62,7 +62,7 @@ else:
     with col3:
         if st.button("⚖️  वकील साहब", use_container_width=True): st.session_state.current_portal = "वकील"; st.rerun()
     with col4:
-        if st.button("🏆 30 DPP क्विज़", use_container_width=True): st.session_state.current_portal = "क्विज़"; st.rerun()
+        if st.button("🏆 30 test qusions", use_container_width=True): st.session_state.current_portal = "क्विज़"; st.rerun()
 
     st.divider()
 
