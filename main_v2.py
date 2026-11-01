@@ -75,7 +75,8 @@ else:
             st.error("🔐 प्रार्थी जी, आपके आज के 5 मुफ़्त सर्च पूरे हो चुके हैं! नए सवाल पूछने के लिए कृपया कल दोबारा आएं। ")
         else:
             st.markdown("<h3 style='color: #10B981; font-size: 20px; margin-top:0;'>📝 स्वदेशी लाइव इनपुट डेस्क (100% मुफ़्त)</h3>", unsafe_allow_html=True)
-            user_query = st.text_area("अपनी कानूनी समस्या यहाँ लिखें:", placeholder="उदाहरण: चोरी की सजा क्या है...")
+            user_query = st.text_area("अपनी कानूनी समस्या यहाँ लिखें:", placeholder="उदाहरण: चोरी की सजा क्या है...", max_chars=500)
+
             
             if st.button("कानूनी सलाह प्राप्त करें ✨", type="primary", use_container_width=True):
                 if user_query.strip():
