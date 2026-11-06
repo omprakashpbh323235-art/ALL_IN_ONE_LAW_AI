@@ -75,7 +75,7 @@ else:
             st.error("🔐 प्रार्थी जी, आपके आज के 5 मुफ़्त सर्च पूरे हो चुके हैं! नए सवाल पूछने के लिए कृपया कल दोबारा आएं। ")
         else:
             st.markdown("<h3 style='color: #10B981; font-size: 20px; margin-top:0;'>📝 स्वदेशी लाइव इनपुट डेस्क (100% मुफ़्त)</h3>", unsafe_allow_html=True)
-            user_query = st.text_area("अपनी कानूनी समस्या यहाँ लिखें:", placeholder="उदाहरण: चोरी की सजा क्या है...", max_chars=108)
+            user_query = st.text_area("अपनी कानूनी समस्या यहाँ लिखें:", placeholder="उदाहरण: चोरी की सजा क्या है...", max_chars=333)
 
             
             if st.button("कानूनी सलाह प्राप्त करें ✨", type="primary", use_container_width=True):
@@ -91,7 +91,7 @@ else:
                         st.error("🚨 एआई चाबी गायब है भाई साहब!")
                     else:
                         genai.configure(api_key=SELECTED_API_KEY)
-                        model = genai.GenerativeModel(model_name='gemini-3.5-flash', system_instruction=ai_config.SYSTEM_INSTRUCTION)
+                        model = genai.GenerativeModel(model_name='gemini-3.6-flash', system_instruction=ai_config.SYSTEM_INSTRUCTION)
 
                         lang_instruction = f"महत्वपूर्ण: आपको अपना पूरा जवाब केवल '{st.session_state.app_lang}' भाषा में ही बिंदुवार देना है। विशेष निर्देश: जवाब की शुरुआत हमेशा अनिवार्य रूप से प्रार्थी का नाम लेकर आदरपूर्वक करें, जैसे: 'सुनिए {st.session_state.user_name} जी, मेरे बड़े भाई आपके प्रश्न के अनुसार...' इसके बाद ही मुख्य धाराएं समझाएं!"
                         if st.session_state.current_portal == "नागरिक":
