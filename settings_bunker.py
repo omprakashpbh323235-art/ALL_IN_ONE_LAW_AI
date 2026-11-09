@@ -52,6 +52,7 @@ def show_settings():
             st.session_state.lang_code = lang_mapping.get(new_lang, "hi")
             st.query_params["saved_lang"] = st.session_state.app_lang
             st.query_params["saved_code"] = st.session_state.lang_code
+            st.query_params["settings_open"] = "false"
             # 📢 सफलता का मैसेज अब स्क्रीन पर टिकेगा मिश्रा जी
             st.success(f"🎉 बधाई हो भाई साहब! आपकी सेटिंग्स बंकर में सुरक्षित लॉक हो चुकी हैं।")
             
