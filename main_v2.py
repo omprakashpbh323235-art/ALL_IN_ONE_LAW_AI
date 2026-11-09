@@ -45,15 +45,18 @@ if not st.session_state.unlocked:
             st.rerun()
         else: st.warning("⚠️ सुरक्षा एलर्ट: नाम दर्ज करना अनिवार्य है भाई!")
 else:
-     # 🗓️ रात 12 बजे का ऑटो-रीसेट टाइमर यहाँ कनेक्ट हो गया भाई साहब
+     
     import law_security
     law_security.check_daily_reset()
-    # 🖥️ मुख्य काउंटर हेडर पट्टी
+    
     st.markdown(f"<div style='background-color: #111827; padding: 10px; border-radius: 10px; border-left: 5px solid #F59E0B; text-align: center;'><h3 style='color: #F59E0B; margin:0; font-size: 14px;'>👤 प्रार्थी: {st.session_state.user_name} जी | 📊 आज के सर्च: {st.session_state.search_count}/5</h3></div>", unsafe_allow_html=True)
 
     with st.expander("⚙️ सेटिंग्स (भाषा/नाम बदलें)"):
         settings_bunker.show_settings()
-    # 👑 यहाँ स्क्रीन को ४ कड़क भागों में बांटकर अधिवक्ता बटन वापस ला दिया गया है!
+    if "app_lang" not in st.session_state:
+    	st.session_state.app_lang = st.query_params.get("saved_lang", "Hindi")
+    	st.session_state.lang_code = st.query_params.get("saved_code", "hi")
+
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         if st.button("📱 आम नागरिक", use_container_width=True): st.session_state.current_portal = "नागरिक"; st.rerun()
@@ -165,4 +168,3 @@ with st.expander("⚠️ महत्वपूर्ण कानूनी स�
         """, 
         unsafe_allow_html=True
     )
-
