@@ -50,7 +50,9 @@ else:
     law_security.check_daily_reset()
     
     st.markdown(f"<div style='background-color: #111827; padding: 10px; border-radius: 10px; border-left: 5px solid #F59E0B; text-align: center;'><h3 style='color: #F59E0B; margin:0; font-size: 14px;'>👤 प्रार्थी: {st.session_state.user_name} जी | 📊 आज के सर्च: {st.session_state.search_count}/5</h3></div>", unsafe_allow_html=True)
-    is_settings_open = st.query_params.get("settings_open", "true") == "true"
+   
+    is_settings_open = False if st.query_params.get("settings_open") == "false" else True
+
     with st.expander("⚙️ सेटिंग्स (भाषा/नाम बदलें)",expanded=is_settings_open):
         settings_bunker.show_settings()
     if "app_lang" not in st.session_state:
@@ -162,9 +164,16 @@ with st.expander("⚠️ महत्वपूर्ण कानूनी स�
                 <strong>ऑल इन वन लॉ एआई (ALL IN ONE Law AI)</strong> केवल शैक्षिक, जागरूकता और सामान्य जानकारी के उद्देश्य से बनाया गया एक स्वतंत्र (Independent) ऐप है। इसका किसी भी सरकारी संस्था, न्यायालय या सरकारी विभाग से कोई संबंध नहीं है। 
             </p>
             <p style="color: #9CA3AF; font-size: 12.5px; line-height: 1.6; margin: 8px 0 0 0; text-align: justify;">
-                यद्यपि भारतीय न्याय संहिता (BNS) की धाराओं को सही ढंग से प्रस्तुत करने का पूरा प्रयास किया गया है, फिर भी इसे आधिकारिक कानूनी सलाह (Official Legal Advice) न माना जाए। किसी भी गंभीर कानूनी मामले या आधिकारिक कार्यवाही के लिए कृपया भारत सरकार का मूल राजपत्र (Government Gazette) देखें या किसी प्रमाणित अधिवक्ता (Vakil) से परामर्श लें। इस ऐप की जानकारी के आधार पर किए गए किसी भी कार्य की जिम्मेदारी यूज़र की स्वयं की होगी।
+                यद्यपि भारतीय न्याय की धाराओं को सही ढंग से प्रस्तुत करने का पूरा प्रयास किया गया है, फिर भी इसे आधिकारिक कानूनी सलाह (Official Legal Advice) न माना जाए। किसी भी गंभीर कानूनी मामले या आधिकारिक कार्यवाही के लिए कृपया भारत सरकार का मूल राजपत्र (Government Gazette) देखें या किसी प्रमाणित अधिवक्ता (Vakil) से परामर्श लें। इस ऐप की जानकारी के आधार पर किए गए किसी भी कार्य की जिम्मेदारी यूज़र की स्वयं की होगी।
             </p>
-        </div>
+<p style="color: #9CA3AF; font-size: 12.5px; line-height: 1.6; margin: 12px 0 0 0; text-align: justify;">
+    <strong>ALL IN ONE Law AI</strong> is an independent app developed solely for educational, awareness, and general informational purposes. It has no affiliation with any government organization, court, or government department.
+</p>
+<p style="color: #9CA3AF; font-size: 12.5px; line-height: 1.6; margin: 12px 0 0 0; text-align: justify;">
+    Although every effort has been made to accurately present the provisions of Indian law, this should not be considered as official legal advice. For any serious legal matter or official action, please refer to the original Government Gazette of India or consult a certified advocate (Vakil). Any action taken based on the information provided in this app shall be at the user's own risk and responsibility.
+</p>
+
+        
         """, 
         unsafe_allow_html=True
     )
