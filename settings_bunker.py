@@ -6,11 +6,11 @@ def show_settings():
     if "user_name" not in st.session_state:
         st.session_state.user_name = "मिश्रा जी"
     if "app_lang" not in st.session_state:
-        st.session_state.app_lang = "Hindi"
+        st.session_state.app_lang = st.query_params.get("saved_lang", "Hindi")
     if "lang_code" not in st.session_state:
-        st.session_state.lang_code = "hi"
+        st.session_state.lang_code = st.query_params.get("saved_code", "hi")
 
-    st.markdown("<div class='bns-card'><h3 style='color: #F59E0B; margin:0; font-size: 18px;'>⚙️ किंग स्टूडियो वीआईपी सेटिंग्स डेस्क</h3><p style='color: #94A3B8; font-size: 13px; margin-top:5px;'>यहाँ से आप अपना शुभ नाम and ऐप की भाषा बदल सकते हैं भाई साहब।</p></div>", unsafe_allow_html=True)
+    st.markdown("<div class='bns-card'><h3 style='color: #F59E0B; margin:0; font-size: 18px;'>⚙️ किंग स्टूडियो वीआईपी सेटिंग्स डेस्क</h3><p style='color: #94A3B8; font-size: 13px; margin-top:5px;'>यहाँ से आप अपना शुभ नाम और ऐप की भाषा बदल सकते हैं भाई साहब।</p></div>", unsafe_allow_html=True)
     
     st.write("")
     # 👤 नाम बदलने का डेस्क
@@ -32,7 +32,7 @@ def show_settings():
             st.session_state.user_name = new_name.strip()
             st.session_state.app_lang = new_lang
             
-            # 🎯 भाषा कोड का सटीक सिंक (उर्दू हटाकर बाकी सब एकदम सेट)
+           
             lang_mapping = {
                 "Hindi": "hi",
                 "English": "en",
@@ -50,7 +50,8 @@ def show_settings():
             }
 
             st.session_state.lang_code = lang_mapping.get(new_lang, "hi")
-            
+            st.query_params["saved_lang"] = st.session_state.app_lang
+            st.query_params["saved_code"] = st.session_state.lang_code
             # 📢 सफलता का मैसेज अब स्क्रीन पर टिकेगा मिश्रा जी
             st.success(f"🎉 बधाई हो भाई साहब! आपकी सेटिंग्स बंकर में सुरक्षित लॉक हो चुकी हैं।")
             
@@ -58,4 +59,4 @@ def show_settings():
             time.sleep(1.5)
             st.rerun()
         else:
-            st.error("🚨 एरर: नाम खाली नहीं छोड़ सकते भाई साहब!")
+            st.error("🚨 नाम खाली नहीं छोड़ सकते भाई साहब!")
