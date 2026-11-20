@@ -32,7 +32,7 @@ st.markdown("<style>html, body, .stApp, .stAppViewContainer, .main, [data-testid
 # 👑 मुख्य आलीशान हेडर हमेशा परमानेंट टॉप पर रहेगा
 st.markdown("<h1 style='text-align: center; color: #F59E0B; font-size: 32px; margin-bottom: 0px;'>⚖️ ALL IN ONE LAW AI</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: #94A3B8; font-size: 14px; margin-top: 5px;'>🛡️सुरक्षित स्वदेशी डिजिटल कानून बंकर</p>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #10B981; font-size: 13px; font-weight: bold; margin-top: -10px;'>👑 निर्माता: 15 वर्षीय युवा डेवलपर, आशुतोष (प्रतापगढ़, उत्तर प्रदेश)</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #10B981; font-size: 13px; font-weight: bold; margin-top: -10px;'>👑 निर्माता:आशुतोष मिश्रा (प्रतापगढ़, उत्तर प्रदेश)</p>", unsafe_allow_html=True)
 
 if not st.session_state.unlocked:
     st.markdown("<br><h3 style='color: white; font-size: 20px; text-align: center;'>👤 सुरक्षा गेटवे: प्रार्थी लॉगिन करें</h3>", unsafe_allow_html=True)
